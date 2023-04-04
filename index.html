@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clayton's Portfolio</title>
+        <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: rgb(123, 158, 158);
+}
+#hexGrid {
+  display: grid;
+  grid-gap:10px;
+  grid-template-columns: repeat(10,1fr);
+  width: 90%;
+  margin: 0 auto;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  list-style-type: none;
+  overflow:hidden;
+}
+
+.hex {
+  grid-column-end: span 2;
+  position: relative;
+  visibility:hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hex::after{
+  content:'';
+  display:block;
+  padding-bottom: 86.602%;  /* =  100 / tan(60) * 1.5 */
+}
+.hexIn{
+  position: absolute;
+  width:100%;
+  padding-bottom: 115.470%; /* =  width / sin(60) */
+  overflow: hidden;
+  visibility: hidden;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+  -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+      -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+          transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+}
+.hexIn * {
+  position: absolute;
+  visibility: visible;
+  outline:1px solid transparent; /* fix for jagged edges in FF on hover transition */
+}
+.hexLink {
+  display:block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+      -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+          transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+}
+
+/*** HEX CONTENT **********************************************************************/
+.hex img {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+  -webkit-transform: rotate3d(0,0,0,0deg);
+      -ms-transform: rotate3d(0,0,0,0deg);
+          transform: rotate3d(0,0,0,0deg);
+}
+
+.hex h1, .hex p {
+  width: 100%;
+  padding: 5%;
+  box-sizing:border-box;
+  background-color: rgba(0, 128, 128, 0.8);
+  font-weight: 300;
+  -webkit-transition:  -webkit-transform .2s ease-out, opacity .3s ease-out;
+          transition:          transform .2s ease-out, opacity .3s ease-out;
+}
+.hex h1 {
+  bottom: 50%;
+  padding-top:50%;
+  font-size: 1.5em;
+  z-index: 1;
+  -webkit-transform:translate3d(0,-100%,0);
+      -ms-transform:translate3d(0,-100%,0);
+          transform:translate3d(0,-100%,0);
+}
+.hex h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  width: 10%;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+}
+.hex p {
+  top: 50%;
+  padding-bottom:50%;
+  -webkit-transform:translate3d(0,100%,0);
+      -ms-transform:translate3d(0,100%,0);
+          transform:translate3d(0,100%,0);
+}
+
+
+/*** HOVER EFFECT  **********************************************************************/
+.hexLink:hover h1, .hexLink:focus h1,
+.hexLink:hover p, .hexLink:focus p{
+  -webkit-transform:translate3d(0,0,0);
+      -ms-transform:translate3d(0,0,0);
+          transform:translate3d(0,0,0);
+}
+
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
+
+@media (min-width:1201px) { /* <- 5-4  hexagons per row */
+  #hexGrid{
+    padding-bottom: 4.4%;
+  }
+  .hex:nth-child(9n+6){ /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
+  #hexGrid{
+    grid-template-columns: repeat(8,1fr);
+    padding-bottom: 5.5%;
+  }
+  .hex:nth-child(7n+5){ /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
+  #hexGrid{
+    grid-template-columns: repeat(6,1fr);
+    padding-bottom: 7.4%;
+  }
+  .hex:nth-child(5n+4){ /* first hexagon of even rows */
+    grid-column-start: 2;
+  }
+}
+
+@media (max-width: 600px) { /* <- 2-1  hexagons per row */
+#hexGrid{
+  grid-template-columns: repeat(4,1fr);
+  padding-bottom: 11.2%;
+  grid-gap:5px;
+}
+.hex:nth-child(3n+3){ /* first hexagon of even rows */
+  grid-column-start: 2;
+}
+}
+
+@media (max-width: 400px) {
+  #hexGrid {
+      font-size: 13px;
+  }
+}
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flexbin {
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin: -2.5px; }
+    .flexbin:after {
+        content: '';
+        flex-grow: 999999999;
+        min-width: 300px;
+        height: 0; }
+    .flexbin > * {
+        position: relative;
+        display: block;
+        height: 300px;
+        margin: 2.5px;
+        flex-grow: 1; }
+        .flexbin > * > img {
+        height: 300px;
+        object-fit: cover;
+        max-width: 100%;
+        min-width: 100%;
+        vertical-align: bottom; }
+    .flexbin.flexbin-margin {
+        margin: 2.5px; }
+    @media (max-width: 980px) {
+        .flexbin {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: -2.5px; }
+        .flexbin:after {
+            content: '';
+            flex-grow: 999999999;
+            min-width: 150px;
+            height: 0; }
+        .flexbin > * {
+            position: relative;
+            display: block;
+            height: 150px;
+            margin: 2.5px;
+            flex-grow: 1; }
+            .flexbin > * > img {
+            height: 150px;
+            object-fit: cover;
+            max-width: 100%;
+            min-width: 100%;
+            vertical-align: bottom; }
+        .flexbin.flexbin-margin {
+            margin: 2.5px; } }
+    @media (max-width: 400px) {
+        .flexbin {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        margin: -2.5px; }
+        .flexbin:after {
+            content: '';
+            flex-grow: 999999999;
+            min-width: 100px;
+            height: 0; }
+        .flexbin > * {
+            position: relative;
+            display: block;
+            height: 100px;
+            margin: 2.5px;
+            flex-grow: 1; }
+            .flexbin > * > img {
+            height: 100px;
+            object-fit: cover;
+            max-width: 100%;
+            min-width: 100%;
+            vertical-align: bottom; }
+        .flexbin.flexbin-margin {
+            margin: 2.5px; } }
+</style>
+
+</head>
+
+<body>
+        <!--
+        <img class="center" src="https://i.ibb.co/87kJX1n/cryptoblue.jpg" alt="crypto by claybowl image">
+        -->
+        <img class="center" src="https://i.ibb.co/JCBXWb3/crptodarkbanner.jpg" alt="crypto by claybowl image">
+        <img class="center" src="https://i.ibb.co/7GBnjHM/cryptowordsbanner.png" alt="crypto by claybowl image">
+        <h1>Float Tanks!</h1>
+        <ul id="hexGrid">
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/p1t97CN/donjon-admins2.png" alt="" />
+                  <h1>Float Room Concept</h1>
+                  <p>My ultimate goal when working with float tanks was to design luxery meditative experiences.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/zG43hhD/donjon-admins4.png" alt="" />
+                  <h1>Float Conference</h1>
+                  <p>I was accepted to present at the 2017 floatation tank conference in Portland, OR. Here I'm pictured with headlining presenter Duncan Trussell.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/TwZMghq/donjon-admins5.png" alt="" />
+                  <h1>Float Conference 2017</h1>
+                  <p>Front row seats to a weekend long conference on cutting edge technology and science of the wonderful meditative experiences provided by float tanks.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/BtS4KZB/donjon-castle.png" alt="" />
+                  <h1>H2Oasis Float Center</h1>
+                  <p>I spent some time working at H2Oasis float center where I had the priviledge to guide thousands of people through their first float tank experience.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/ZYyVxf4/donjon-gang-logo2.png" alt="" />
+                  <h1>Floataway Tanks</h1>
+                  <p>I had the pleasure of working with Floataways most modern model of float tank. This the Lamborghini of float tanks!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/sgWSSx4/donjon-gang-logo3.png" alt="" />
+                  <h1>Recover Therapy</h1>
+                  <p>I also had the privilege of working at Recovery therapy where I got to work with athletes who used the float tank for physical recovery and enhanced competative performance. </p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/y47XpKj/donjon-self-portrait2.png" alt="" />
+                  <h1>DIY Float Tanks</h1>
+                  <p>While working at Recover therapy we branched out into float tank construction and sales!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="https://i.ibb.co/r233vmn/vr-office.png" alt="" />
+                  <h1>Float Room Kits</h1>
+                  <p>We sold float room kits across across the country.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <img src="https://i.ibb.co/V9ZgYpq/vr-office3.png" alt="" />
+                    <h1>Float Rooms</h1>
+                    <p>Our beautiful float room designs were built in float centers and spas in several cities.</p>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <img src="floatroom.jpg" alt="" />
+                    <h1>Custom Desings</h1>
+                    <p>We sold the bones of the float room and that could be customized by the builder.</p>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <img src="floatroomshipping.jpg" alt="" />
+                    <h1>Shipping</h1>
+                    <p>Here's an example of one of our kits being shipped out to Georgia!</p>
+                  </a>
+                </div>
+              </li>
+        </ul>
+
+<!--Farm-->
+        <h1>Farming!</h1>
+        <ul id="hexGrid">
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_0145.JPG" alt="" />
+                  <h1>Cannabis Greenhouse</h1>
+                  <p>I spent three years working on a farm producing medical cannabis!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_0151.JPG" alt="" />
+                  <h1>Cannabis Greenhouses</h1>
+                  <p>We ran seven greenhouses for nine months out of the year.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_0716.JPEG" alt="" />
+                  <h1>Greenhouse Construction</h1>
+                  <p>Each year we built additional greenhouses. It was very challenging, but built them to last!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_0930.JPEG" alt="" />
+                  <h1>Propogation</h1>
+                  <p>Here's one of our new crops before they were transplanted into their final growing places. This was the best part of the season!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_0978.JPEG" alt="" />
+                  <h1>Vegetative Growth</h1>
+                  <p>The first half of the grow season is all about vegetative growth! I learned farming skills during this phase that I later applied to growing food.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_1417.JPEG" alt="" />
+                  <h1>Outdoor Growing</h1>
+                  <p>We had an outdoor field approximately the size of a football field.</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_1531.JPEG" alt="" />
+                  <h1>Labor</h1>
+                  <p>Although there were several times of the year which demanded our technical skills, much of the year was hard labor! But, no complaints.</p>
+                </a>
+              </div>
+            </li>
+        </ul>
+        <!--Farm end-->
+
+<!--Current Projects-->
+        <ul id="hexGrid">
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_2052.JPGG" alt="" />
+                  <h1>From Cannabis to food</h1>
+                  <p>Due to socio-economic demands, I recently shifted my focus to farming food crops!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_2218.JPEG" alt="" />
+                  <h1>From Cannabis to food</h1>
+                  <p>Due to socio-economic demands, I recently shifted my focus to farming food crops!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_2214.JPG" alt="" />
+                  <h1>Urban Farming</h1>
+                  <p>I've been consistantly pushing the envelope on how much food I can grow in a typical city lot. I found that I'm easily in a surplus for my family!</p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_2115.JPEG" alt="" />
+                  <h1></h1>
+                  <p></p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_2067.JPEG" alt="" />
+                  <h1></h1>
+                  <p></p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_1610.JPEG" alt="" />
+                  <h1></h1>
+                  <p></p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+              <div class="hexIn">
+                <a class="hexLink" href="#">
+                  <img src="iPhone Pictures\IMG_1675.JPEG" alt="" />
+                  <h1></h1>
+                  <p></p>
+                </a>
+              </div>
+            </li>
+            <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <img src="iPhone Pictures\IMG_1768.JPEG" alt="" />
+                    <h1></h1>
+                    <p></p>
+                  </a>
+                </div>
+              </li>
+              <li class="hex">
+                <div class="hexIn">
+                  <a class="hexLink" href="#">
+                    <img src="iPhone Pictures\IMG_1586.JPEG" alt="" />
+                    <h1></h1>
+                    <p></p>
+                  </a>
+                </div>
+              </li>
+        </ul>
+        <!--Current Project End-->
+<h1>Another of my biggest passions, which ultimately led me to apply for Holberton, was algorithmic trading. Below is an example of an alogorithm I wrote which can be applied to any market. It gives automatic buy/sell signals!</h1>
+        <!-- TradingView Chart BEGIN -->
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+<script type="text/javascript">
+var tradingview_embed_options = {};
+tradingview_embed_options.width = '1280';
+tradingview_embed_options.height = '800';
+tradingview_embed_options.chart = 'LjT0cZUy';
+new TradingView.chart(tradingview_embed_options);
+</script>
+<!-- TradingView Chart END -->
+<img src="tradingviewcode.jpg" alt="">
+
+        <div class="flexbin">
+
+
+        <h1>Current Projects and Passions</h1>
+
+                <img src="iPhone Pictures\IMG_2052.JPG" alt="">
+                <img src="iPhone Pictures\IMG_2218.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_2214.JPG" alt="">
+                <img src="iPhone Pictures\IMG_2115.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_2067.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_1610.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_1675.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_1768.JPEG" alt="">
+                <img src="iPhone Pictures\IMG_1586.JPEG" alt="">
+
+            <h3>Family</h3>
+                <img src="iPhone Pictures\Family\42AB8D40-04BE-43FD-9C2E-55ED23AAC3F7.jpg" alt="">
+                <img src="iPhone Pictures\Family\976C0956-9BCE-4BC6-80FB-429A8C058FA7.jpg" alt="">
+                <img src="iPhone Pictures\Family\FullSizeRender-3.jpg" alt="">
+                <img src="iPhone Pictures\Family\IMG_0116.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0160.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0166.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0250.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0394.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0429.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0450.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0460.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0683.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0832.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0869.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0997.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_0998.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_1456.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_1493.JPG" alt="">
+                <img src="iPhone Pictures\Family\IMG_1677.JPEG" alt="">
+                <img src="iPhone Pictures\Family\IMG_2049.JPEG" alt="">
+
+            <h3>Programming</h3>
+                <img src="iPhone Pictures\IMG_0336.JPG" alt="">
+        </div>
+<h1>One of my other life long passions is music. Below is a sample of some of the music I've produced and published to my Soundcloud.</h1>
+            <h3>Music</h3>
+            <!--Beginning of Soundcloud song embedding-->
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1170685960&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/claybowl" title="Claybowl" target="_blank" style="color: #cccccc; text-decoration: none;">Claybowl</a> ·
+                    <a href="https://soundcloud.com/claybowl/smokestack-lightening" title="Smokestack Lightening" target="_blank" style="color: #cccccc; text-decoration: none;">Smokestack Lightening</a></div>
+
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/14300883&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/claybowl" title="Claybowl" target="_blank" style="color: #cccccc; text-decoration: none;">Claybowl</a> ·
+                    <a href="https://soundcloud.com/claybowl/april-showers-clean-winters" title="April Showers Clean Winter&#x27;s Cowards" target="_blank" style="color: #cccccc; text-decoration: none;">April Showers Clean Winter&#x27;s Cowards</a></div>
+
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1090016170&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/claybowl" title="Claybowl" target="_blank" style="color: #cccccc; text-decoration: none;">Claybowl</a> ·
+                    <a href="https://soundcloud.com/claybowl/vibes-man" title="Vibes, man" target="_blank" style="color: #cccccc; text-decoration: none;">Vibes, man</a></div>
+
+                    <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1089711007&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+                    <a href="https://soundcloud.com/claybowl" title="Claybowl" target="_blank" style="color: #cccccc; text-decoration: none;">Claybowl</a> ·
+                    <a href="https://soundcloud.com/claybowl/dear-mr-fantasy-traffic-cover-1" title="Dear Mr. Fantasy (Traffic Cover) / Billy &amp; The Kids Tribute" target="_blank" style="color: #cccccc; text-decoration: none;">Dear Mr. Fantasy (Traffic Cover) / Billy &amp; The Kids Tribute</a></div>
+            <!--End of Soundcloud song embedding-->
+
+
+</body>
+        </html>
