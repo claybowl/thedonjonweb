@@ -11,7 +11,7 @@
   padding: 0;
 }
 body {
-  background: #060213;
+  background: #0A4869;
 }
 #hexGrid {
   display: grid;
@@ -168,12 +168,39 @@ body {
   }
 }
 
+/*** Clayton's Style **********************************************************************/
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
+
+.center-banner {
+  width: 100%; /* Set the width to 100% of its container */
+  max-width: 1920px; /* Limit the maximum width, for example, 1920 pixels */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  display: block; /* Remove any default spacing around the image */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif; /* Set the font to Montserrat */
+  font-weight: 700; /* Set the font weight to bold */
+  font-size: 72px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  text-transform: uppercase; /* Make the text uppercase */
+  color: #333; /* Set the text color, adjust as needed */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+
+
+/*** End **********************************************************************/
 
 .flexbin {
     display: flex;
@@ -254,11 +281,12 @@ body {
 </head>
 
 <body>
-        <!--
-        <img class="center" src="https://i.ibb.co/87kJX1n/cryptoblue.jpg" alt="crypto by claybowl image">
-        -->
+        <img class="center-banner" src="https://i.ibb.co/m8R9SXg/wanderweird-remember-scaled.jpg" alt="crypto by claybowl image">
+<!--
         <img class="center" src="" alt="crypto by claybowl image">
         <img class="center" src="" alt="crypto by claybowl image">
+-->
+
         <h1>Float Tanks!</h1>
         <ul id="hexGrid">
             <li class="hex">
