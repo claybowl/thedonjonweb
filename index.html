@@ -304,45 +304,43 @@ h1 {
   <script src="parallaxScrolling-1.0.min.js"></script>
   <div id="demo" style="background-image: url(&quot;dead-skies.jpg&quot;); background-position: 0px -79.2805px;"></div>
 
-// Config
-var id = "demo"; // (str): Required. ID of DOM element.
-var src = dead-skies.jpg; // (str): Required. Source of background image.
-var scrollDir = "down"; // (str): Optional. Scroll direction can be either "down" or "up". Default is "down".
-var maxOffset = "auto"; // (int): Optional. Max number of pixels the background can move vertically. Default is "auto" - this will use all available overflowing pixels.
-
-// Init Parallax
-var parallax = new Parallax();
-parallax.init(id, src, scrollDir, maxOffset);
-var el = document.getElementById(id);
-
-// Setup Parallax Functions
-function parallaxLoad() {
-  parallaxScroll();
-}
-function parallaxScroll() {
-  requestAnimationFrame(function() {
-    var yPos = parallax.scroll();
-    if (yPos != 'auto') {
-      el.style.backgroundPosition = ('0 '+yPos+'px');
-    }
-  });
-}
-var parallaxResize = debounce(function() {
-  var yPos = parallax.resize();
-  if (yPos != 'auto') {
-    el.style.backgroundPosition = ('0 '+yPos+'px');
-  }
-}, 200); // Limit to 5fps
-
-// Setup Parallax Events
-if (window.attachEvent) {
-  window.attachEvent('onresize', parallaxResize);
-  window.attachEvent('onscroll', parallaxScroll);
-}
-else if (window.addEventListener) {
-  window.addEventListener('resize', parallaxResize);
-  window.addEventListener('scroll', parallaxScroll);
-}
+  <div class="css-script-ads" align="center"><script type="text/javascript"><!--
+    google_ad_client = "ca-pub-2783044520727903";
+    /* CSSScript Demo Page */
+    google_ad_slot = "3025259193";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+          <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script></div>
+      <div id="demo" style="background-image: url(&quot;bg.jpg&quot;); background-position: 0px -79.2805px;"></div>
+    
+      <script type="text/javascript">
+        var parallax = new Parallax();
+        parallax.init("demo", "bg.jpg", "down");
+    
+        var el = document.getElementById("demo");
+    
+        function parallaxLoad() {
+          el.style.backgroundPosition = ('0 '+parallax.scroll()+'px');
+        }
+        window.addEventListener('scroll', function() {
+          el.style.backgroundPosition = ('0 '+parallax.scroll()+'px');
+        });
+        window.addEventListener('resize', function() {
+          el.style.backgroundPosition = ('0 '+parallax.resize()+'px');
+        });
+      </script><script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-46156385-1', 'cssscript.com');
+      ga('send', 'pageview');
+    
+    </script>
 
 <!--img src="https://i.ibb.co/BPSnG7d/dead-skies.jpg" alt="" style="width: 100%; height: 40%; auto;">
 <h1 {
