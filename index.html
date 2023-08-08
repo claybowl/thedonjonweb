@@ -11,9 +11,26 @@
   padding: 0;
 }
 body {
-  background: #7fa0c1;
+  background: #2c5e86;
   height: 100vh;
 }
+
+/**
+element {
+  background-image: url("psychedelic_image.jpg");
+  background-position: 0px -112.721px;
+}
+**/
+
+#demo {
+      margin-top:50px;
+      width: 100%;
+      height: 400px;
+
+      background-size: cover;
+      transition: background-position 0.05s linear;
+    }
+
 #hexGrid {
   display: grid;
   grid-gap:10px;
@@ -63,6 +80,15 @@ body {
   -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
       -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
           transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+}
+
+/*** FONTS **********************************************************************/
+@font-face {
+    font-family: 'Top Secret';
+    src: url('fonts/TopSecret.woff2') format('woff2'),
+         url('fonts/TopSecret.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /*** HEX CONTENT **********************************************************************/
@@ -279,8 +305,75 @@ h1 {
             margin: 2.5px; } }
 </style>
 </head>
+
+
 <body>
-<img src="https://i.ibb.co/BPSnG7d/dead-skies.jpg" alt="" style="width: 100%; height: 40%; auto;">
+  <div id="demo" style="background-image: url(&quot;psychedelic_image.jpg&quot;); background-position: 0px 0px;"></div>
+
+  <script type="text/javascript">
+    var parallax = new Parallax();
+    parallax.init("demo", "psychedelic_image.jpg", "down");
+
+    var el = document.getElementById("demo");
+
+    function parallaxLoad() {
+      el.style.backgroundPosition = ('0 '+parallax.scroll()+'px');
+    }
+    window.addEventListener('scroll', function() {
+      el.style.backgroundPosition = ('0 '+parallax.scroll()+'px');
+    });
+    window.addEventListener('resize', function() {
+      el.style.backgroundPosition = ('0 '+parallax.resize()+'px');
+    });
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-46156385-1', 'cssscript.com');
+    ga('send', 'pageview');
+  
+  </script>
+<!--img src="https://i.ibb.co/BPSnG7d/dead-skies.jpg" alt="" style="width: 100%; height: 40%; auto;">
+<h1 {
+  font-family: 'Top Secret', sans-serif;
+}>
+-->
+
+<!-- SOCIALS --------------------------------------------------------------------------->
+<link
+  href="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css"
+  rel="stylesheet"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js"
+  defer
+  init
+></script>
+
+
+<div class="shareon">
+  <a class="facebook"></a>
+  <a class="linkedin"></a>
+  <a class="mastodon"></a>
+  <!-- FB App ID is required for the Messenger button to function -->
+  <a class="messenger" data-fb-app-id="0123456789012345"></a>
+  <a class="odnoklassniki"></a>
+  <a class="pinterest"></a>
+  <a class="pocket"></a>
+  <a class="reddit"></a>
+  <a class="teams"></a>
+  <a class="telegram"></a>
+  <a class="twitter"></a>
+  <a class="viber"></a>
+  <a class="vkontakte"></a>
+  <a class="whatsapp"></a>
+  <a class="copy-url"></a>
+</div>
+<!-- END SOCIALS --------------------------------------------------------------------------->
+
 <h1>Top Secret Donjon Dev Projects</h1>
       <div id="magicform-root" style="z-index: 9999;position: relative;"></div> 
       <script>
@@ -334,6 +427,9 @@ h1 {
   <a class="copy-url"></a>
 </div>
 
+
+
+
 <!--Hexagons first two rows BEGIN-------------------------------------------------------------------------------->
 
         <ul id="hexGrid">
@@ -377,8 +473,10 @@ h1 {
             <div class="hexIn">
               <a class="hexLink" href="https://claydonjon-notebook.notion.site/Machine-Learning-Development-Life-Cycle-4a3bdc6589594fc4ac15177cbee3c8a5">
                 <img src="https://i.ibb.co/y47XpKj/donjon-self-portrait2.png" alt="" />
-                <h1>DIY Float Tanks</h1>
-                <p>While working at Recover therapy we branched out into float tank construction and sales!</p>
+                <h1>About Me</h1>
+                <p>For a long time I have been fascinated by quantitative and algorithmic thinking, specifically as it relates to decision making, so as a Machine Learning student at Holberton School - Tulsa, I have appreciated the opportunity to spend two years mastering skills and tools to more deeply understand the intersection of technology with business, culture, perception, and humanity in general.
+                  I am enthusiastic about the opportunity to be at the forefront of the AI and machine learning renaissance.
+                  With a diverse background that includes roles in agriculture, video production, finance, journalism, and even a penchant for exploring manufacturing sensory deprivation tanks, I possess a unique blend of skills and experiences and look forward to finding innovative ways to apply these to the ML and tech industry.</p>
               </a>
             </div>
           </li>
@@ -704,44 +802,13 @@ new TradingView.chart(tradingview_embed_options);
         <div class="flexbin">
 
 
-        <h1>Current Projects and Passions</h1>
+        <h1>About Me:</h1>
 
-                <img src="iPhone Pictures\IMG_2052.JPG" alt="">
-                <img src="iPhone Pictures\IMG_2218.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_2214.JPG" alt="">
-                <img src="iPhone Pictures\IMG_2115.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_2067.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_1610.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_1675.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_1768.JPEG" alt="">
-                <img src="iPhone Pictures\IMG_1586.JPEG" alt="">
+        <h1>Music Production:</h1>
 
-            <h3>Family</h3>
-                <img src="iPhone Pictures\Family\42AB8D40-04BE-43FD-9C2E-55ED23AAC3F7.jpg" alt="">
-                <img src="iPhone Pictures\Family\976C0956-9BCE-4BC6-80FB-429A8C058FA7.jpg" alt="">
-                <img src="iPhone Pictures\Family\FullSizeRender-3.jpg" alt="">
-                <img src="iPhone Pictures\Family\IMG_0116.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0160.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0166.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0250.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0394.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0429.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0450.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0460.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0683.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0832.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0869.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0997.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_0998.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_1456.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_1493.JPG" alt="">
-                <img src="iPhone Pictures\Family\IMG_1677.JPEG" alt="">
-                <img src="iPhone Pictures\Family\IMG_2049.JPEG" alt="">
 
-            <h3>Programming</h3>
-                <img src="iPhone Pictures\IMG_0336.JPG" alt="">
+
         </div>
-<h1>One of my other life long passions is music. Below is a sample of some of the music I've produced and published to my Soundcloud.</h1>
             <h3>Music</h3>
             <!--Beginning of Soundcloud song embedding-->
                     <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay"
