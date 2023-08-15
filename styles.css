@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #313d46;
+  background: hsl(249, 6%, 23%);
   height: 100vh;
 }
 
@@ -137,6 +137,7 @@ p.cool {
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
+  margin-right: 200px;
 }
 
 /*** End **********************************************************************/
