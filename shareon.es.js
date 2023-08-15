@@ -1,5 +1,5 @@
 const n = {
-  facebook: (t) => `https://www.facebook.com/sharer/sharer.php?u=${t.url}${t.hashtags ? `&hashtag=%23${t.hashtags.split("%2C")[0]}` : ""}`,
+  facebook: (t) => `https://www.facebook.com/claytonreesefb{t.url}${t.hashtags ? `&hashtag=%23${t.hashtags.split("%2C")[0]}` : ""}`,
   linkedin: (t) => `https://www.linkedin.com/sharing/share-offsite/?url=${t.url}`,
   mastodon: (t) => `https://toot.kytta.dev/?text=${t.title}%0D%0A${t.url}${t.text ? `%0D%0A%0D%0A${t.text}` : ""}${t.via ? `%0D%0A%0D%0A${t.via}` : ""}`,
   messenger: (t) => `https://www.facebook.com/dialog/send?app_id=${t.fbAppId}&link=${t.url}&redirect_uri=${t.url}`,

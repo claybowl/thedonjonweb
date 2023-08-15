@@ -29,7 +29,7 @@ body {
 #demo {
       margin-top:50px;
       width: 100%;
-      height: 100%;
+      height: 80%;
 
       background-size: cover;
       transition: background-position 0.05s linear;
@@ -75,7 +75,7 @@ h3 {
 
 p.special {
   font-family: 'Loser Moto Club', serif;
-  font-weight: 300; /* Set the font weight to bold */
+  font-weight: 100; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
   color: #ccf4ff; /* Set the text color, adjust as needed */
@@ -124,6 +124,17 @@ p.first-order {
   letter-spacing: 0.05em; /* Add some letter spacing */
   color: #e8f6fc; /* Set the text color, adjust as needed */
   text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+p.cool {
+  font-family: 'coolvetica', Arial, Helvetica, sans-serif;
+  font-weight: 300; /* Set the font weight to bold */
+  font-size: 33px; /* Set the font size */
+  letter-spacing: 0.07em; /* Add some letter spacing */
+  color: #5dd6e1a2; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
 }
@@ -183,8 +194,16 @@ p.first-order {
   font-style: normal;
 }
 
-
-
+@font-face {
+  font-family: 'coolvetica';
+  src: url('fonts/coolvetica compressed hv.otf') format('opentype'),
+  src: url('fonts/coolvetica condensed rg.otf') format('opentype'),
+       url('fonts/coolvetica crammed rg.otf') format('opentype'),
+       url('fonts/coolvetica rg it.otf') format('opentype'),
+       url('fonts/coolvetica rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
 /*** End **********************************************************************/
 
 
