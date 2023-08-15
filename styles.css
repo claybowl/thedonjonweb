@@ -1,27 +1,195 @@
+/*** Clayton's Style **********************************************************************/
+
 * {
   margin: 0;
   padding: 0;
 }
+
 body {
   background: #313d46;
   height: 100vh;
 }
 
-/**
-element {
-  background-image: url("psychedelic_image.jpg");
-  background-position: 0px -112.721px;
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-**/
+
+.center-banner {
+  width: 100%; /* Set the width to 100% of its container */
+  max-width: 1920px; /* Limit the maximum width, for example, 1920 pixels */
+  height: auto; /* Maintain the aspect ratio */
+  object-fit: cover; /* Ensure the image covers the entire container */
+  display: block; /* Remove any default spacing around the image */
+  margin-left: auto; /* Center the image horizontally */
+  margin-right: auto; /* Center the image horizontally */
+}
 
 #demo {
       margin-top:50px;
       width: 100%;
-      height: 400px;
+      height: 100%;
 
       background-size: cover;
       transition: background-position 0.05s linear;
     }
+
+h1 {
+  font-family: 'Montserrat', sans-serif; /* Set the font to Montserrat */
+  font-weight: 700; /* Set the font weight to bold */
+  font-size: 72px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  text-transform: uppercase; /* Make the text uppercase */
+  color: #dfd7d7; /* Set the text color, adjust as needed */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+h2 {
+  font-family: 'Top Secret', sans-serif; /* Use the custom font, with a fallback to sans-serif */
+  font-weight: 600; /* Set the font weight to bold */
+  font-size: 48px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #e3e9f1; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+h3 {
+  font-family: 'Molot', sans-serif; /* Use the custom font, with a fallback to sans-serif */
+  font-weight: 300; /* Set the font weight to bold */
+  font-size: 48px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #b9b6b6; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+h3 {
+  font-family: 'Molot', sans-serif;
+}
+
+p.special {
+  font-family: 'Loser Moto Club', serif;
+  font-weight: 300; /* Set the font weight to bold */
+  font-size: 33px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #ccf4ff; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+p.alien {
+  font-family: 'Glipervelz-Origy', serif;
+  font-weight: 1000; /* Set the font weight to bold */
+  font-size: 33px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #917ba1; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+p.runes {
+  font-family: 'runes', serif;
+  font-weight: 300; /* Set the font weight to bold */
+  font-size: 33px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #ccf4ff; /* Set the text color, adjust as needed */
+  text-align: right; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+p.ancient-gods {
+  font-family: 'The Ancient Gods', serif;
+  font-weight: 300; /* Set the font weight to bold */
+  font-size: 33px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #dfd7d7; /* Set the text color, adjust as needed */
+  text-align: left; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+p.first-order {
+  font-family: 'First Order', serif;
+  font-weight: 150; /* Set the font weight to bold */
+  font-size: 78px; /* Set the font size */
+  letter-spacing: 0.05em; /* Add some letter spacing */
+  color: #e8f6fc; /* Set the text color, adjust as needed */
+  text-align: center; /* Center the text */
+  margin-top: 20px; /* Add some margin to the top */
+  margin-bottom: 20px; /* Add some margin to the bottom */
+}
+
+/*** End **********************************************************************/
+
+
+/*** FONTS **********************************************************************/
+@font-face {
+  font-family: 'Top Secret';
+  src: url('fonts/TopSecret.woff2') format('woff2'),
+       url('fonts/TopSecret.woff') format('woff'),
+       url('fonts/Top Secret.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Molot';
+  src: url('fonts/molot.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Loser Moto Club';
+  src: url('fonts/Loser Moto Club.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Glipervelz-Origy';
+  src: url('fonts/Glipervelz-Origy FULL.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/*** New Fonts *************************************************************/
+@font-face {
+  font-family: 'runes';
+  src: url('fonts/ComicRunes.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'The Ancient Gods';
+  src: url('fonts/The Ancient Gods.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'First Order';
+  src: url('fonts/firstorder.ttf') format('truetype'),
+       url('fonts/firstorder3d.ttf') format('truetype'),
+       url('fonts/firstorder3dital.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*** End **********************************************************************/
+
+
+
+/*** HEX CONTENT **********************************************************************/
 
 #hexGrid {
   display: grid;
@@ -74,16 +242,6 @@ element {
           transform: skewY(-30deg) rotate3d(0,0,1,60deg);
 }
 
-/*** FONTS **********************************************************************/
-@font-face {
-    font-family: 'Top Secret';
-    src: url('fonts/TopSecret.woff2') format('woff2'),
-         url('fonts/TopSecret.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*** HEX CONTENT **********************************************************************/
 .hex img {
   left: -100%;
   right: -100%;
@@ -186,38 +344,6 @@ element {
       font-size: 13px;
   }
 }
-
-/*** Clayton's Style **********************************************************************/
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.center-banner {
-  width: 100%; /* Set the width to 100% of its container */
-  max-width: 1920px; /* Limit the maximum width, for example, 1920 pixels */
-  height: auto; /* Maintain the aspect ratio */
-  object-fit: cover; /* Ensure the image covers the entire container */
-  display: block; /* Remove any default spacing around the image */
-  margin-left: auto; /* Center the image horizontally */
-  margin-right: auto; /* Center the image horizontally */
-}
-
-h1 {
-  font-family: 'Montserrat', sans-serif; /* Set the font to Montserrat */
-  font-weight: 700; /* Set the font weight to bold */
-  font-size: 72px; /* Set the font size */
-  letter-spacing: 0.05em; /* Add some letter spacing */
-  text-transform: uppercase; /* Make the text uppercase */
-  color: #b9b6b6; /* Set the text color, adjust as needed */
-  text-align: center; /* Center the text */
-  margin-top: 20px; /* Add some margin to the top */
-  margin-bottom: 20px; /* Add some margin to the bottom */
-}
-
-
 
 /*** End **********************************************************************/
 
