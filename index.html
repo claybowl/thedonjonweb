@@ -48,24 +48,20 @@
 <!-- END SOCIALS --------------------------------------------------------------------------->
 
 <h1>Welcome to the Donjon.</h1>
+
+<!-- CHATBOT --------------------------------------------------------------------------->
       <div id="magicform-root" style="z-index: 9999;position: relative;"></div> 
       <script>
         (function (w, d, s, o, f, js, fjs) {
             w["Simple-Widget"] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
             js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
             js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
-        }(window, document, "script", "w1",
-        'https://magicform-widget-assets.s3.us-west-2.amazonaws.com/widget.js'));
+        }(window, document, "script", "w1", 'https://magicform-widget-assets.s3.us-west-2.amazonaws.com/widget.js'));
         w1("init", 
-        {"popUpTimer":3000,"imageUrl":null,"widgetType":"inline",
-        "chatHeight":630,"chatWidth":370,"placeholder":"What's on your mind?","title":
-        "Clay's AI Assistant","subtitle":
-        "To facilitate talks with Recruiters","stackId":"stack_2851e54a-7944-47f4-8686-1397fa503490",
-        "userId":"a6d0bcc8-e93b-4c90-ae6f-6e9146b8908f","colors":
-        {"main":"#313d46","userMessageBubble":"#313d46"}}
+        {"popUpTimer":3000,"imageUrl":null,"chatHeight":630,"chatWidth":370,"placeholder":"What's on your mind?","title":"Clayton's AI Assistant","subtitle":"To facilitate talks with Recruiters","widgetType":"bubble","targetElementId":"magicform-root","stackId":"stack_2851e54a-7944-47f4-8686-1397fa503490","userId":"a6d0bcc8-e93b-4c90-ae6f-6e9146b8908f","colors":{"main":"#414e65","userMessageBubble":"#414e65"}}
         );
       </script>
-
+<!-- END CHATBOT --------------------------------------------------------------------------->
 
 <!-- Embed the audio file and use Javascript to play audio ------------------------------------------------->
     <audio id="myAudio" src="Jerry Garcia - Mississippi Moon (1974) (320 kbps).mp3" preload="auto"></audio>
