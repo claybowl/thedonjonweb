@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<link href='https://cdn.tailwindcss.com' rel='stylesheet'>
-<title>AI Consulting Form</title>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link href='https://cdn.tailwindcss.com' rel='stylesheet'>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: 'Roboto Slab', serif;
+    }
+    h1, h2 {
+      font-weight: 700;
+      color: #fff;
+    }
+    form {
+      background-color: #333;
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+    }
+    input[type='text'], input[type='email'], input[type='tel'], input[type='url'], input[type='date'], input[type='time'], textarea {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+    textarea {
+      height: 150px;
+    }
+    label {
+      display: inline-block;
+      margin-right: 10px;
+      color: #fff;
+    }
+    input[type='radio'] {
+      margin-right: 5px;
+    }
+    button[type='submit'] {
+      background-color: #fff;
+      color: #222;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button[type='submit']:hover {
+      background-color: #ddd;
+    }
+  </style>
+  <title>AI Consulting Form</title>
 </head>
 
-<body class='bg-gray-200 px-8 py-12'>
+<body>
   <div class='mx-auto max-w-4xl pb-8'>
     <h1 class='text-2xl font-bold mb-10 text-center'>AI Consulting Inquiry Form</h1>
 
