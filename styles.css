@@ -6,7 +6,8 @@
 }
 
 body {
-  background: hsl(249, 6%, 23%);
+  background: #1a1a1a; /* Dark grey background */
+  color: #e0e0e0; /* Light grey text */
   height: 100vh;
 }
 
@@ -41,7 +42,7 @@ h1 {
   font-size: 72px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
   text-transform: uppercase; /* Make the text uppercase */
-  color: #dfd7d7; /* Set the text color, adjust as needed */
+  color: #007acc; /* Blueish color for headings */
   text-align: center; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -52,7 +53,7 @@ h2 {
   font-weight: 600; /* Set the font weight to bold */
   font-size: 48px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #e3e9f1; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other text */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -63,7 +64,7 @@ h3 {
   font-weight: 300; /* Set the font weight to bold */
   font-size: 48px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #b9b6b6; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other text */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -78,7 +79,7 @@ p.special {
   font-weight: 100; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #ccf4ff; /* Set the text color, adjust as needed */
+  color: #007acc; /* Blueish for special paragraphs */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -89,7 +90,7 @@ p.alien {
   font-weight: 1000; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #917ba1; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other paragraphs */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -100,7 +101,7 @@ p.runes {
   font-weight: 300; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #ccf4ff; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other paragraphs */
   text-align: right; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -111,7 +112,7 @@ p.ancient-gods {
   font-weight: 300; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #dfd7d7; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other paragraphs */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -122,7 +123,7 @@ p.first-order {
   font-weight: 150; /* Set the font weight to bold */
   font-size: 78px; /* Set the font size */
   letter-spacing: 0.05em; /* Add some letter spacing */
-  color: #aecad6; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other paragraphs */
   text-align: center; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
@@ -133,7 +134,7 @@ p.cool {
   font-weight: 300; /* Set the font weight to bold */
   font-size: 33px; /* Set the font size */
   letter-spacing: 0.07em; /* Add some letter spacing */
-  color: #92d2d4ce; /* Set the text color, adjust as needed */
+  color: #e0e0e0; /* Light grey for other paragraphs */
   text-align: left; /* Center the text */
   margin-top: 20px; /* Add some margin to the top */
   margin-bottom: 20px; /* Add some margin to the bottom */
