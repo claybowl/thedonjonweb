@@ -11,7 +11,11 @@
 <body>
 
   <div id="demo" style="background-image: url(&quot;resized_bridge_to_donjon_850.png&quot;);
-  background-position: 0px 0px;">
+  background-size: cover; /* Ensures the image covers the div without stretching */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 400px; /* Set a fixed height for the banner */
+  ">
   </div>
 
 <!-- SOCIALS --------------------------------------------------------------------------->
@@ -252,7 +256,7 @@
             </li>
             <li class="hex">
               <div class="hexIn">
-                <a class="hexLink" href="https://github.com/claybowl/holbertonschool-sorting_algorithms/blob/master/radix_algo.md">
+                <a class="hexLink" href="https://github.com/claybowl/holbertonschool-machine_learning/blob/master/radix_algo.md">
                   <img src="images/colorful_mountains3.png" alt="" />
                   <h1>Radix(LSD) Sorting Algo</h1>
                   <p>A guide to programming the Radix algorithm in C.</p>
